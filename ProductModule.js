@@ -4,20 +4,20 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { SafeAreaView } from 'react-native'
 
-import { Home } from './src/components'
+import { NavigationManager } from './src/components'
 
-function ProductModule({ products }) {
-  const addToCart = (cartData) => {
-    console.log(cartData);
-  }
+function ProductModule({ products, addToCart }) {
 
   return (
-    <Home products={products} addToCart={addToCart} />
+    <SafeAreaView style={{ flex: 1 }}>
+      <NavigationManager products={products} addToCart={addToCart} />
+    </SafeAreaView>
   );
 };
 
-ProductModule.PropTypes = {
+ProductModule.propTypes = {
   products: PropTypes.array,
   addToCart: PropTypes.func
 }

@@ -15,11 +15,11 @@ import {
   StyledButtonTitle
 } from './styledComponets'
 
-function Product({ products, addToCart }) {
+function Product({ products, addToCart, handleNavigation }) {
   return (
     <View>
-      {products.map((product) =>
-        <StyledProductWrapper>
+      {products.map((product, index) => (
+        <StyledProductWrapper onPress={() => handleNavigation(product)} key={index + "product"}>
           <StyledImage
             source={{
               uri: product.productImage,
@@ -36,14 +36,15 @@ function Product({ products, addToCart }) {
             <StyledButtonTitle>+</StyledButtonTitle>
           </StyledAddToCartButton>
         </StyledProductWrapper>
-      )}
+      ))}
     </View>
   );
 }
 
-Product.PropTypes = {
+Product.propTypes = {
   products: PropTypes.array,
-  addToCart: PropTypes.func
+  addToCart: PropTypes.func,
+  handleNavigation: PropTypes.func,
 }
 
 export default Product;

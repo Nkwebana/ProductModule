@@ -1,5 +1,4 @@
-import Home from './Home';
 import Product from './Product'
+import NavigationManager from './NavigationManager'
 
-
-export { Home, Product }
+export { Product, NavigationManager }

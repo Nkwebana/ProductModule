@@ -9,7 +9,7 @@ const StyledProductWrapper = styled.TouchableOpacity`
 const StyledImage = styled.Image`
   width: 90px;
   height: 90px;
-  margin:5px;
+  margin: 5px;
 `;
 
 const StyledProductInfo = styled.View`
