@@ -8,10 +8,10 @@ import { SafeAreaView } from 'react-native'
 
 import { NavigationManager } from './src/components'
 
-function ProductModule({ products, addToCart }) {
+function ProductModule({ products, addToCart, isParentNavigating = false }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <NavigationManager products={products} addToCart={addToCart} />
+      <NavigationManager products={products} addToCart={addToCart} isParentNavigating={isParentNavigating} />
     </SafeAreaView>
   );
 };

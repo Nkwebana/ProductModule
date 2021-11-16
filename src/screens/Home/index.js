@@ -3,13 +3,9 @@ import PropTypes from 'prop-types';
 
 import { Product } from '../../components'
 
-function Home({ navigation, products }) {
+function Home({ navigation, products, addToCart }) {
   const handleNavigation = (product) => {
     navigation.navigate('Product Details', { product })
-  }
-
-  const addToCart = (cartData) => {
-    console.log(cartData);
   }
 
   return (

@@ -10,18 +10,27 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ProductDetail, Home } from '../../screens';
 
-function NavigationManager({ products, addToCart }) {
+function NavigationManager({ products, addToCart, isParentNavigating }) {
   const Stack = createNativeStackNavigator();
 
+  const productDetailNav = () => (
+    <Stack.Navigator initialRouteName="All Products">
+      <Stack.Screen name="All Products">
+        {props => <Home {...props} products={products} addToCart={addToCart} />}
+      </Stack.Screen>
+      <Stack.Screen name="Product Details" component={ProductDetail} />
+    </Stack.Navigator>);
+
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="All Products">
-        <Stack.Screen name="All Products">
-          {props => <Home {...props} products={products} addToCart={addToCart} />}
-        </Stack.Screen>
-        <Stack.Screen name="Product Details" component={ProductDetail} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      {isParentNavigating ? productDetailNav() :
+        <NavigationContainer>
+          {productDetailNav()}
+        </NavigationContainer>
+
+      }
+    </>
+
   );
 }
 
