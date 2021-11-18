@@ -6,12 +6,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SafeAreaView } from 'react-native'
 
-import { NavigationManager } from './src/components'
+import { Home } from './src/screens';
 
-function ProductModule({ products, addToCart, isParentNavigating = false }) {
+function ProductModule({ products, addToCart }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <NavigationManager products={products} addToCart={addToCart} isParentNavigating={isParentNavigating} />
+      <Home products={products} addToCart={addToCart} />
     </SafeAreaView>
   );
 };

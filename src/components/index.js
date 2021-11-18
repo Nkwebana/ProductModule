@@ -1,4 +1,4 @@
-import Product from './Product'
-import NavigationManager from './NavigationManager'
+import Product from "./Product";
+import ProductDetail from "../components/ProductDetail";
 
-export { Product, NavigationManager }
+export { Product, ProductDetail };

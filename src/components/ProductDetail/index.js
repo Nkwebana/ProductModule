@@ -1,17 +1,13 @@
-import React from 'react';
-import { Text } from 'react-native';
-import Product from '../../components/Product/index';
+import React from "react";
+import { Text, Button } from "react-native";
 
-function ProductDetail({ route: {
-  params: {
-    product
-  },
-}, }) {
+function ProductDetail({ product, goBack }) {
   return (
     <>
       <Text>{product.productName}</Text>
       <Text>{product.productDescription}</Text>
       <Text>{product.productPrice}</Text>
+      <Button title="Back" onPress={() => goBack()} />
     </>
   );
 }

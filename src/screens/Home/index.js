@@ -1,25 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-import { Product } from '../../components'
+import { Product, ProductDetail } from "../../components";
 
-function Home({ navigation, products, addToCart }) {
+function Home({ products, addToCart }) {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const handleNavigation = (product) => {
-    navigation.navigate('Product Details', { product })
-  }
+    setSelectedProduct(product);
+  };
+
+  const goBack = () => {
+    setSelectedProduct(null);
+  };
 
   return (
-    <Product
-      products={products}
-      addToCart={addToCart}
-      handleNavigation={handleNavigation}
-    />
+    <>
+      {!selectedProduct && (
+        <Product
+          products={products}
+          addToCart={addToCart}
+          handleNavigation={handleNavigation}
+        />
+      )}
+
+      {selectedProduct && (
+        <ProductDetail product={selectedProduct} goBack={goBack} />
+      )}
+    </>
   );
 }
 
 Home.propTypes = {
   products: PropTypes.array,
-  addToCart: PropTypes.func
-}
+  addToCart: PropTypes.func,
+};
 
 export default Home;
