@@ -1,8 +1,8 @@
 {
   "name": "productmodule-bn",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
-  "main": "ProductModule.js",
+  "main": "App.js",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -10,7 +10,7 @@
     "test": "jest",
     "lint": "eslint ."
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "17.0.2",
     "react-native": "0.66.3",
     "react-native-gesture-handler": "^1.10.3",
@@ -21,6 +21,14 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "react": "17.0.2",
+    "react-native": "0.66.3",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-safe-area-view": "^1.1.1",
+    "react-native-screens": "^3.9.0",
+    "react-navigation": "^4.4.4",
+    "styled-components": "^5.3.3",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
@@ -28,7 +36,9 @@
     "eslint": "7.14.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "17.0.2",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5"
   },
   "jest": {
     "preset": "react-native"

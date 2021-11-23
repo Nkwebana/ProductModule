@@ -1,33 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
-import { Product, ProductDetail } from "../../components";
+import { Product } from "../../components";
 
-function Home({ products, addToCart }) {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const handleNavigation = (product) => {
-    setSelectedProduct(product);
-  };
-
-  const goBack = () => {
-    setSelectedProduct(null);
-  };
-
+function Home({ products, addToCart, handleNavigation }) {
   return (
-    <>
-      {!selectedProduct && (
-        <Product
-          products={products}
-          addToCart={addToCart}
-          handleNavigation={handleNavigation}
-        />
-      )}
-
-      {selectedProduct && (
-        <ProductDetail product={selectedProduct} goBack={goBack} />
-      )}
-    </>
+    <Product
+      products={products}
+      addToCart={addToCart}
+      handleNavigation={handleNavigation}
+    />
   );
 }
 

@@ -1,15 +1,30 @@
 import React from "react";
-import { Text, Button } from "react-native";
+import { Text } from "react-native";
 
-function ProductDetail({ product, goBack }) {
+function ProductDetail({
+  route: {
+    params: { product },
+  },
+}) {
   return (
     <>
       <Text>{product.productName}</Text>
       <Text>{product.productDescription}</Text>
       <Text>{product.productPrice}</Text>
-      <Button title="Back" onPress={() => goBack()} />
     </>
   );
 }
+
+ProductDetail.options = {
+  topBar: {
+    title: {
+      text: "Product Details",
+      color: "white",
+    },
+    background: {
+      color: "lightblue",
+    },
+  },
+};
 
 export default ProductDetail;
